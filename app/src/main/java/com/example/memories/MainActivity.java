@@ -1,9 +1,11 @@
 package com.example.memories;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.widget.Button;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     // initializing variables
     TextView tv_Hint;
-    Button btn_year, btn_month, btn_day;
+    NumberPicker np_year, np_month, np_day;
     Button btn_Calc;
 
     @Override
@@ -25,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
         // assign variables
         tv_Hint = findViewById(R.id.HINT);
-        btn_year = findViewById(R.id.bt_year);
-        btn_month = findViewById(R.id.bt_month);
-        btn_day = findViewById(R.id.bt_day);
+        np_year = findViewById(R.id.bt_year);
+        np_month = findViewById(R.id.bt_month);
+        np_day = findViewById(R.id.bt_day);
         btn_Calc = findViewById(R.id.btn_calculate);
 
         // Get today's date using LocalDate Library
@@ -42,11 +44,6 @@ public class MainActivity extends AppCompatActivity {
         // for date
         int day = today.getDayOfMonth();
 
-        // to set the current date as by default
-        String year_str = String.valueOf(year);
-        String month_str = String.valueOf(month);
-        String day_str = String.valueOf(day);
-
         // set text Style
         String str;
         str = getResources().getString(R.string.Start_butt);
@@ -54,14 +51,27 @@ public class MainActivity extends AppCompatActivity {
         content.setSpan(new UnderlineSpan(), 0, 5, 0);
         btn_Calc.setText(content);
 
+        // set value for year
+        np_year.setMinValue(1980);
+        np_year.setMaxValue(year);
+        np_year.setTextColor(Color.BLACK);
+        np_year.setTextSize(50);
 
-        // set value
-        btn_year.setText(year_str);
-        btn_month.setText(month_str);
-        btn_day.setText(day_str);
+        // set value for month
+        np_month.setMinValue(1);
+        np_month.setMaxValue(12);
+        np_month.setTextColor(Color.BLACK);
+        np_month.setTextSize(50);
+
+        // set value for day
+        np_day.setMinValue(1);
+        np_day.setMaxValue(31);
+        np_day.setTextColor(Color.BLACK);
+        np_day.setTextSize(50);
+
     }
 }
-        // action to be performed when button Start is clicked
+// action to be performed when button Start is clicked
        /* btn_birth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
