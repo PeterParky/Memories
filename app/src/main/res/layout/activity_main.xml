@@ -11,7 +11,7 @@
 
     <Button
         android:id="@+id/btn_Skip"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:text="@string/Skip_butt"
@@ -66,10 +66,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:background="@drawable/custom_butt"
         android:id="@+id/btn_calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Start_butt"
+        android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
