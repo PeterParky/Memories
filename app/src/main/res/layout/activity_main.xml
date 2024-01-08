@@ -9,6 +9,18 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/btn_Skip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="@string/Skip_butt"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/HINT"
         android:layout_width="match_parent"
@@ -16,7 +28,7 @@
         android:background="@android:color/transparent"
         android:text="@string/Hint"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@id/bt_month"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Start_butt"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
