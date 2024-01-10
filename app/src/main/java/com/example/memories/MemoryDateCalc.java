@@ -1,52 +1,74 @@
+package com.example.memories;
+
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
+import java.time.temporal.ChronoUnit;
 
-public class MemoryDateCalc {
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+public class MemoryDateCalc implements Serializable {
 
-		// Input the anniversary date from the user
-		System.out.print("Enter the anniversary date (in format yyyy-MM-dd): ");
-		String inputDate = scanner.nextLine();
+	int year, month, day;
+	long totalday, DatedDay;
+	private String inputDate;
+	private LocalDate anniversaryDate, today;
+	private Period timeUntilAnniversary;
 
+
+	public String getInputDate() {
+		return inputDate;
+	}
+
+	public void setInputDate(String inputDate) {
+		this.inputDate = inputDate;
+	}
+
+	public Period getTimeUntilAnniversary() {
+		return timeUntilAnniversary;
+	}
+
+	public void setTimeUntilAnniversary(Period timeUntilAnniversary) {
+		this.timeUntilAnniversary = timeUntilAnniversary;
+	}
+
+	// Input the anniversary date from the user
+	public MemoryDateCalc (int year, int month, int day) {
+		this.year = year;
+		this.month = month;
+		this.day = day;
+		this.inputDate = year + "-" + String.format("%02d", month) + "-" + String.format("%02d", day);
+	}
+
+	public long DatedDay_Calc() {
 		// Convert the string to a LocalDate
-		LocalDate anniversaryDate = LocalDate.parse(inputDate, DateTimeFormatter.ISO_DATE);
+		anniversaryDate = LocalDate.parse(inputDate, DateTimeFormatter.ISO_DATE);
 
 		// Get today's date
-		LocalDate today = LocalDate.now();
+		today = LocalDate.now();
+
+		// Calculate the dated day
+		DatedDay = ChronoUnit.DAYS.between(anniversaryDate, today.plusDays(1));
+
+		return DatedDay;
+	}
+	
+	public long Day_Calc() {
+		// Convert the string to a LocalDate
+		LocalDate new_anniversaryDate = LocalDate.parse(inputDate, DateTimeFormatter.ISO_DATE);
+		
+		// Get today's date
+		today = LocalDate.now();
 
 		// Calculate the period from today to the anniversary
-		Period timeUntilAnniversary = Period.between(today, anniversaryDate);
-		Period DatedDay = Period.between(anniversaryDate, today);
+		timeUntilAnniversary = Period.between(today, new_anniversaryDate);
 
 		// Display the days left until the anniversary
-
 		while (timeUntilAnniversary.isNegative()) {
-			anniversaryDate = anniversaryDate.plusYears(1);
-			timeUntilAnniversary = Period.between(today, anniversaryDate);
+			new_anniversaryDate = new_anniversaryDate.plusYears(1);
+			timeUntilAnniversary = Period.between(today, new_anniversaryDate);
 		}
-
-		if (timeUntilAnniversary.isZero()) {
-			System.out.println("Congratulations! Today is the anniversary date!");
-		} else {
-			int days = DatedDay.getDays();
-			int months = DatedDay.getMonths();
-			int years = DatedDay.getYears();
-
-			System.out.println("Congratulations! You have been dated for " + years +
-					" years, " + months
-					+ " months, and " + days + " days.");
-
-			days = timeUntilAnniversary.getDays();
-			months = timeUntilAnniversary.getMonths();
-			years = timeUntilAnniversary.getYears();
-
-			System.out.println("There is " + years + " years, " + months
-					+ " months, and " + days + " days left until your anniversary.");
-		}
-
-		scanner.close();
+		totalday = ChronoUnit.DAYS.between(today, new_anniversaryDate.plusDays(1));
+		
+		return totalday;
 	}
 }

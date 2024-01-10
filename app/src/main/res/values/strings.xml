@@ -6,4 +6,5 @@
     <string name="default_day">23</string>
     <string name="Start_butt">Start</string>
     <string name="Hint">When did your love start?</string>
+    <string name="Days">Days</string>
 </resources>

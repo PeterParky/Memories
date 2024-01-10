@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Memories</string>
+    <string name="Skip_butt">スキップ</string>
+    <string name="default_year">2000</string>
+    <string name="default_month">08</string>
+    <string name="default_day">23</string>
+    <string name="Start_butt">スタート</string>
+    <string name="Hint">愛が始まった日を教えてください</string>
+    <string name="Days">日間</string>
+</resources>
