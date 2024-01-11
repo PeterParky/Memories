@@ -1,4 +1,4 @@
-package com.example.memories;
+package app.main.memories;
 
 import android.content.Context;
 

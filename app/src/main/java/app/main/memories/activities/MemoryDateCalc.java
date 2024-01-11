@@ -1,4 +1,4 @@
-package com.example.memories;
+package app.main.memories.activities;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -67,7 +67,7 @@ public class MemoryDateCalc implements Serializable {
 			new_anniversaryDate = new_anniversaryDate.plusYears(1);
 			timeUntilAnniversary = Period.between(today, new_anniversaryDate);
 		}
-		totalday = ChronoUnit.DAYS.between(today, new_anniversaryDate.plusDays(1));
+		totalday = ChronoUnit.DAYS.between(today, new_anniversaryDate);
 		
 		return totalday;
 	}

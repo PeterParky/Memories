@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context="app.main.memories.fragment.SetAva_Fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/btn_setImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            tools:src="@drawable/ic_sunset" />
+
+        <TextView
+            android:id="@+id/tv_setName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/You"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</FrameLayout>

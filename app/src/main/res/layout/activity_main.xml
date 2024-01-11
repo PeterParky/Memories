@@ -1,61 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?><!-- Parent layout as linear layout-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context=".MainActivity">
+    tools:context="app.main.memories.activities.MainActivity">
 
     <!-- linear layout to show date-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:background="@color/bright_pink"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_your_info"
-            android:layout_width="wrap_content"
+        <FrameLayout
+            android:id="@+id/fr_set_ava"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:gravity="center"
             android:paddingTop="25dp"
-            android:text="@string/Days"
-            android:textColor="@color/black"
-            android:textSize="30sp" />
+            android:textColor="@color/black"/>
 
-        <TextView
-            android:id="@+id/tv_show"
+        <LinearLayout
             android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_ld"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:background="@android:color/transparent"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_show"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:gravity="top"
+                android:paddingTop="5dp"
+                android:text="@string/Days"
+                android:textColor="@color/black"
+                android:textSize="55sp" />
+
+            <TextView
+                android:id="@+id/tv_info"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fr_set_ava_2"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:gravity="center"
             android:paddingTop="25dp"
-            android:text="@string/Days"
-            android:textColor="@color/black"
-            android:textSize="30sp" />
-
-        <TextView
-            android:id="@+id/tv_partner_info"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:gravity="center"
-            android:paddingTop="25dp"
-            android:text="@string/Days"
-            android:textColor="@color/black"
-            android:textSize="30sp" />
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
-    <!-- to display the message "Result"-->
 
-    <!-- To show the final output(age)-->
+
 
 </LinearLayout>

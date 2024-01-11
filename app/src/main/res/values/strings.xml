@@ -7,4 +7,8 @@
     <string name="Start_butt">Start</string>
     <string name="Hint">When did your love start?</string>
     <string name="Days">Days</string>
+    <string name="You">You</string>
+    <string name="Partner">Him/Her</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
